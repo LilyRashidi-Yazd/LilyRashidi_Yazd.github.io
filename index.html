@@ -3,27 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Physics/Math 131 - Coding Showcase</title>
+    <title>Math/Physics 131 - Coding Showcase</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
+            background-color: #f7f7f7;
         }
         header {
-            background-color: #003366;
+            background-color: #4CAF50;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 15px;
         }
         section {
             padding: 20px;
         }
         h2 {
-            color: #003366;
+            color: #333;
         }
-        .code-container {
+        pre {
             background-color: #282828;
             color: white;
             padding: 15px;
@@ -31,12 +31,11 @@
             font-family: "Courier New", Courier, monospace;
             white-space: pre-wrap;
             word-wrap: break-word;
-            margin-bottom: 20px;
         }
         footer {
             text-align: center;
             padding: 10px;
-            background-color: #003366;
+            background-color: #4CAF50;
             color: white;
             position: fixed;
             width: 100%;
@@ -47,61 +46,35 @@
 <body>
 
     <header>
-        <h1>Welcome to My Physics/Math 131 Coding Showcase</h1>
-        <p>Explore the code I've written for my Physics and Math 131 course projects.</p>
+        <h1>Math/Physics 131 Coding Showcase</h1>
+        <p>Welcome! Here's a collection of the code I've written for my course projects.</p>
     </header>
 
     <section>
-        <h2>Code Example 1: Solving Kinematic Equations</h2>
-        <div class="code-container">
-            <pre>
-# Python code to solve kinematic equations
-# Given initial velocity (v0), acceleration (a), and time (t), we calculate final velocity (v)
-
-def final_velocity(v0, a, t):
-    return v0 + a * t
-
-# Example usage
-initial_velocity = 10  # m/s
-acceleration = 2       # m/s^2
-time = 5               # seconds
-
-print(final_velocity(initial_velocity, acceleration, time))  # Output: 20 m/s
-            </pre>
-        </div>
-
-        <h2>Code Example 2: Projectile Motion</h2>
-        <div class="code-container">
-            <pre>
-# Python code to simulate projectile motion
+        <h2>Code Example 1: Solving Equations</h2>
+        <pre>
+# Example Python code to solve quadratic equations
 import math
 
-def projectile_motion(initial_velocity, angle):
-    g = 9.81  # acceleration due to gravity (m/s^2)
-    angle_rad = math.radians(angle)  # Convert angle to radians
-    v_x = initial_velocity * math.cos(angle_rad)
-    v_y = initial_velocity * math.sin(angle_rad)
-    
-    time_of_flight = 2 * v_y / g
-    max_height = (v_y ** 2) / (2 * g)
-    range_of_projectile = v_x * time_of_flight
-    
-    return time_of_flight, max_height, range_of_projectile
+def solve_quadratic(a, b, c):
+    discriminant = b**2 - 4*a*c
+    if discriminant > 0:
+        root1 = (-b + math.sqrt(discriminant)) / (2*a)
+        root2 = (-b - math.sqrt(discriminant)) / (2*a)
+        return root1, root2
+    elif discriminant == 0:
+        root = -b / (2*a)
+        return root,
+    else:
+        return "No real roots"
 
 # Example usage
-velocity = 20  # m/s
-angle = 45     # degrees
-
-time, height, range_ = projectile_motion(velocity, angle)
-print(f"Time of flight: {time} s")
-print(f"Max height: {height} m")
-print(f"Range: {range_} m")
-            </pre>
-        </div>
+print(solve_quadratic(1, -3, 2))  # Output: (2.0, 1.0)
+        </pre>
     </section>
 
     <footer>
-        <p>&copy; 2025 Physics/Math 131 | Created by Your Name</p>
+        <p>&copy; 2025 Math/Physics 131 | Created by Your Name</p>
     </footer>
 
 </body>
