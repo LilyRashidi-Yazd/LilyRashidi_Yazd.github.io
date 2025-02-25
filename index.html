@@ -3,43 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Math/Physics 131 - Coding Showcase</title>
+    <title>Physics/Math 131 - Coding Showcase</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7; /* Soft light background */
             margin: 0;
             padding: 0;
-            background-color: #f7f7f7;
+            color: #333; /* Dark text for readability */
         }
         header {
-            background-color: #4CAF50;
+            background-color: #9b4dca; /* Soft purple */
             color: white;
             text-align: center;
-            padding: 15px;
+            padding: 20px;
+            font-size: 24px;
+            border-bottom: 3px solid #6a2a97; /* Darker purple border */
         }
         section {
+            margin: 20px;
             padding: 20px;
+            background-color: white; /* White background for content */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         h2 {
-            color: #333;
+            color: #6a2a97; /* Dark purple for headings */
+            font-size: 22px;
+            margin-bottom: 10px;
         }
         pre {
-            background-color: #009865;
-            color: white;
+            background-color: #282828; /* Dark gray/black background for code */
+            color: #dcdcdc; /* Light gray text for code */
             padding: 15px;
-            border-radius: 5px;
-            font-family: "Courier New", Courier, monospace;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
             white-space: pre-wrap;
             word-wrap: break-word;
+            overflow-x: auto;
         }
         footer {
             text-align: center;
             padding: 10px;
-            background-color: #4CAF50;
+            background-color: #9b4dca; /* Matching purple footer */
             color: white;
             position: fixed;
             width: 100%;
             bottom: 0;
+        }
+        a {
+            color: #9b4dca; /* Purple link color */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline; /* Underline effect on hover */
         }
     </style>
 </head>
@@ -47,34 +64,53 @@
 
     <header>
         <h1>Math/Physics 131 Coding Showcase</h1>
-        <p>Welcome! Here's a collection of the code I've written for my course projects.</p>
+        <p>Check out the code I've created for my course projects!</p>
     </header>
 
     <section>
-        <h2>Code Example 1: Solving Equations</h2>
+        <h2>Code Example 1: Solving Kinematic Equations</h2>
         <pre>
-# Example Python code to solve quadratic equations
-import math
-
-def solve_quadratic(a, b, c):
-    discriminant = b**2 - 4*a*c
-    if discriminant > 0:
-        root1 = (-b + math.sqrt(discriminant)) / (2*a)
-        root2 = (-b - math.sqrt(discriminant)) / (2*a)
-        return root1, root2
-    elif discriminant == 0:
-        root = -b / (2*a)
-        return root,
-    else:
-        return "No real roots"
+# Python code to solve kinematic equations
+def final_velocity(v0, a, t):
+    return v0 + a * t
 
 # Example usage
-print(solve_quadratic(1, -3, 2))  # Output: (2.0, 1.0)
+initial_velocity = 10  # m/s
+acceleration = 2       # m/s^2
+time = 5               # seconds
+print(final_velocity(initial_velocity, acceleration, time))  # Output: 20 m/s
+        </pre>
+    </section>
+
+    <section>
+        <h2>Code Example 2: Projectile Motion</h2>
+        <pre>
+# Python code to simulate projectile motion
+import math
+
+def projectile_motion(velocity, angle):
+    g = 9.81  # gravity (m/s^2)
+    angle_rad = math.radians(angle)  # Convert angle to radians
+    v_x = velocity * math.cos(angle_rad)
+    v_y = velocity * math.sin(angle_rad)
+    
+    time_of_flight = 2 * v_y / g
+    max_height = (v_y**2) / (2 * g)
+    range_of_projectile = v_x * time_of_flight
+    
+    return time_of_flight, max_height, range_of_projectile
+
+# Example usage
+time, height, range_ = projectile_motion(20, 45)
+print(f"Time of flight: {time} seconds")
+print(f"Max height: {height} meters")
+print(f"Range: {range_} meters")
         </pre>
     </section>
 
     <footer>
         <p>&copy; 2025 Math/Physics 131 | Created by Your Name</p>
+        <p><a href="#">More about me</a></p> <!-- Optional link -->
     </footer>
 
 </body>
